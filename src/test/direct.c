@@ -1,5 +1,4 @@
 ﻿#include <unistd.h>     // Für syscall()
-#include <sys/syscall.h> // Für SYS_write, SYS_open, SYS_close
 #include <fcntl.h>       // Für die O_-Konstanten
 #include <stdio.h>       // Für perror()
 
