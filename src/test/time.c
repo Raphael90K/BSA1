@@ -5,7 +5,7 @@
 
 long long get_current_time_ns() {
     struct timespec ts;
-    clockF_gettime(CLOCK_MONOTONIC, &ts);
+    clock_gettime(CLOCK_MONOTONIC, &ts);
     return ts.tv_sec * 1000000000LL + ts.tv_nsec;
 }
 

@@ -15,21 +15,16 @@ int main() {
     uint64_t start_tsc, end_tsc;
     uint64_t latency_in_ticks, avg_latency_in_ticks;
 
-
-    // Messung
-    get_tsc();
-
     start_tsc = get_tsc();
     for (int i = 0; i < NUM_ITERATIONS; i++) {
-        pid = getpid();
+        getpid();
     }
     end_tsc = get_tsc();
 
     latency_in_ticks = end_tsc - start_tsc;
     avg_latency_in_ticks = latency_in_ticks / NUM_ITERATIONS;
 
-    printf("avg latency is %lu\n", avg_latency_in_ticks);
-
+    printf("avg ticks for getpid is %lu\n", avg_latency_in_ticks);
 
     return 0;
 }
