@@ -19,4 +19,5 @@ gcc -o sleep_array ../src/array/sleep_array.c
 gcc -o tsc_array ../src/array/tsc_array.c
 
 # measure context switch
-sudo perf stat -e context-switches ./my_program
+sudo perf stat -e context-switches [program]
+/usr/bin/time -v [program]
