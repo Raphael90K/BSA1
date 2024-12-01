@@ -17,3 +17,6 @@ gcc -o pid_array ../src/array/pid_array.c
 gcc -o shed_yield_array ../src/array/shed_yield_array.c
 gcc -o sleep_array ../src/array/sleep_array.c
 gcc -o tsc_array ../src/array/tsc_array.c
+
+# measure context switch
+sudo perf stat -e context-switches ./my_program
