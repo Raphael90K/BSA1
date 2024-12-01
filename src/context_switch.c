@@ -55,7 +55,7 @@ int main() {
 
     context_switch_time = latency_in_ticks / (2.0 * NUM_ITERATIONS); // Zwei Kontextwechsel pro Iteration
 
-    printf("Durchschnittliche Kontextwechselzeit: %lu\n", context_switch_time);
+    printf("Avg context switch time: %lu\n", context_switch_time);
 
     // Zerstöre Mutexe
     pthread_mutex_destroy(&lock1);
