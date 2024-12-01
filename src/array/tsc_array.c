@@ -13,7 +13,7 @@ int main() {
     uint64_t latency_in_ticks;
     long long cycles[NUM_ITERATIONS];
 
-    FILE *logfile = fopen("../jupyter/latencies_tsc.csv", "w");
+    FILE *logfile = fopen("../resources/latencies_tsc.csv", "w");
     if (!logfile) {
         perror("Fehler beim Öffnen der Log-Datei");
         return 1;

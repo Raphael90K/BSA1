@@ -1,6 +1,7 @@
 ﻿#include <unistd.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <sys/syscall.h>
 #include <x86intrin.h>
 
 #define NUM_ITERATIONS 1000000
@@ -17,7 +18,7 @@ int main() {
 
     start_tsc = get_tsc();
     for (int i = 0; i < NUM_ITERATIONS; i++) {
-        getpid();
+        syscall(SYS_getpid);
     }
     end_tsc = get_tsc();
 

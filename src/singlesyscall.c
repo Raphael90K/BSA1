@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    const char *filename = "compiled/output.txt";
+    const char *filename = "../resources/output.txt";
 
     FILE *file = fopen(filename, "r"); // "r" bedeutet "lesen"
     if (file == NULL) {

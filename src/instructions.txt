@@ -1,0 +1,19 @@
+# Disassembly and find open syscall instruction
+objdump -d -S -Intel compiled/singlesyscall | grep -C 200 'open' | grep -C 50 'syscall'
+
+# Prozessortakt
+dmesg | grep -i tsc
+
+# invariant TSC support
+cpuid | grep -i tsc | grep -i invariant
+
+# compile from dir root/compiled
+gcc -o syscall_pid ../src/avg/syscalls_pid.c
+gcc -o tsc ../src/avg/tsc.c
+gcc -o sleep ../src/avg/sleep.c
+gcc -o shed_yield ../src/avg/shed_yield.c
+
+gcc -o pid_array ../src/array/pid_array.c
+gcc -o shed_yield_array ../src/array/shed_yield_array.c
+gcc -o sleep_array ../src/array/sleep_array.c
+gcc -o tsc_array ../src/array/tsc_array.c

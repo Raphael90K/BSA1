@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <sys/syscall.h>
 #include <x86intrin.h>
 
 #define NUM_ITERATIONS 1000000
@@ -14,7 +15,7 @@ int main() {
     uint64_t latency_in_ticks;
     long long cycles[NUM_ITERATIONS];
 
-    FILE *logfile = fopen("../jupyter/latencies_pid.csv", "w");
+    FILE *logfile = fopen("../resources/latencies_pid.csv", "w");
     if (!logfile) {
         perror("Fehler beim Öffnen der Log-Datei");
         return 1;
@@ -25,7 +26,7 @@ int main() {
 
         start_tsc = get_tsc();
 
-        getpid();
+        syscall(SYS_getpid);
 
         end_tsc = get_tsc();
 

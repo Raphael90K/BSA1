@@ -14,7 +14,7 @@ int main() {
     uint64_t latency_in_ticks;
     long long cycles[NUM_ITERATIONS];
 
-    FILE *logfile = fopen("../jupyter/latencies_shed_yield.csv", "w");
+    FILE *logfile = fopen("../resources/latencies_shed_yield.csv", "w");
     if (!logfile) {
         perror("Fehler beim Öffnen der Log-Datei");
         return 1;

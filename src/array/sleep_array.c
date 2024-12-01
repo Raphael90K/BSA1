@@ -15,7 +15,7 @@ int main() {
     struct timespec req = {0, 0};
     long long cycles[NUM_ITERATIONS];
 
-    FILE *logfile = fopen("../jupyter/latencies_nanosleep.csv", "w");
+    FILE *logfile = fopen("../resources/latencies_nanosleep.csv", "w");
     if (!logfile) {
         perror("Fehler beim Öffnen der Log-Datei");
         return 1;
